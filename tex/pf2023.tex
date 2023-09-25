@@ -148,11 +148,20 @@
 
 \date{Anno Accademico 2023/2024}
 
-%\makeatletter
-%\newcommand\disablecolorlinks{\def\HyColor@UseColor##1{}}
-%\makeatletter
-%\addtobeamertemplate{section page}{\disablecolorlinks{}}{}
+\makeatletter
+\newcommand\disablecolorlinks{\def\HyColor@UseColor##1{}}
+\makeatletter
 
+\setbeamertemplate{section page}
+{
+  \disablecolorlinks{}
+  \begin{centering}
+    \begin{beamercolorbox}[sep=12pt,center]{section title}
+      \usebeamerfont{section title}\insertsection\par
+    \end{beamercolorbox}
+  \end{centering}
+}
+ 
 \AtBeginSection[ % this is for \section*
 {
   \setbeamertemplate{footline}{}
@@ -166,23 +175,6 @@
   % do nothing for \section
 }
 
-% \AtBeginSection[] % Do nothing for \section*
-% {
-%   \begin{frame}<beamer>
-%     \frametitle{Outline}
-%     \tableofcontents[currentsection]
-%   \end{frame}
-% }
-
-\setbeamertemplate{section page}
-{
-  \begin{centering}
-    \begin{beamercolorbox}[sep=12pt,center]{part title}
-      \usebeamerfont{section title}\insertsection\par
-    \end{beamercolorbox}
-  \end{centering}
-}
- 
 \settowidth{\leftmargini}{\usebeamertemplate{itemize item}}
 \addtolength{\leftmargini}{\labelsep}
 
