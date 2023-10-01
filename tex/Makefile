@@ -9,7 +9,7 @@ pf2023.pdf: $(TEXFILES)
 	rm -f contents.tex
 	echo '\input{introduzione.tex}' > contents.tex
 	echo '\input{architecture.tex}' >> contents.tex
-#	echo '\input{basics.tex}' >> contents.tex
+	echo '\input{basics.tex}' >> contents.tex
 #	echo '\input{flowcontrol.tex}' >> contents.tex
 #	echo '\input{functions.tex}' >> contents.tex
 #	echo '\input{reference.tex}' >> contents.tex
@@ -29,18 +29,18 @@ pf2023p.pdf: $(TEXFILES)
 	rm -f contents.tex
 	echo '\input{introduction.tex}' > contents.tex
 	echo '\input{architecture.tex}' >> contents.tex
-	echo '\input{basics.tex}' >> contents.tex
-	echo '\input{flowcontrol.tex}' >> contents.tex
-	echo '\input{functions.tex}' >> contents.tex
-	echo '\input{reference.tex}' >> contents.tex
-	echo '\input{class.tex}' >> contents.tex
-	echo '\input{templates.tex}' >> contents.tex
-	echo '\input{stl.tex}' >> contents.tex
-	echo '\input{compilation.tex}' >> contents.tex
-	echo '\input{memory_management.tex}' >> contents.tex
-	echo '\input{static.tex}' >> contents.tex
-	echo '\input{polymorphism.tex}' >> contents.tex
-	echo '\input{epilog.tex}' >> contents.tex
+#	echo '\input{basics.tex}' >> contents.tex
+#	echo '\input{flowcontrol.tex}' >> contents.tex
+#	echo '\input{functions.tex}' >> contents.tex
+#	echo '\input{reference.tex}' >> contents.tex
+#	echo '\input{class.tex}' >> contents.tex
+#	echo '\input{templates.tex}' >> contents.tex
+#	echo '\input{stl.tex}' >> contents.tex
+#	echo '\input{compilation.tex}' >> contents.tex
+#	echo '\input{memory_management.tex}' >> contents.tex
+#	echo '\input{static.tex}' >> contents.tex
+#	echo '\input{polymorphism.tex}' >> contents.tex
+#	echo '\input{epilog.tex}' >> contents.tex
 	$(LATEX) -jobname=pf2023p $(TRANS)
 	$(LATEX) -jobname=pf2023p $(TRANS)
 	rm contents.tex

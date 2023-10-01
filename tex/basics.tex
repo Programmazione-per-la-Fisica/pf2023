@@ -14,7 +14,7 @@
     \item support for multiple styles of programming (\textit{paradigms})
     \item much used in scientific fields, but also in games, finance,
       telecommunications, embedded, \ldots
-    \item available on all platforms
+    \item available on most architectures and operating systems
     \item efficient
     \item ISO standard
     \end{itemize}
@@ -28,8 +28,13 @@
     \begin{codeblock}
 int main() \{\}\end{codeblock}
 
-  \item<2-> Let's write these 13 characters (including spaces) in a \alert{source
-      file}, which we call \code{minimal.cpp}, using Visual Studio Code
+  \item<2-> Let's write these 13 characters (including spaces) in a \textbf{text
+      document}, which we call \code{minimal.cpp}, using Visual Studio Code
+    \begin{itemize}
+    \item In \Cpp{} terms, this text document is called \alert{source file}
+    \item Also, let's start using the \textit{shell}, writing commands in a
+      \textit{Terminal} instead of clicking icons with the mouse
+    \end{itemize}
 
     \begin{shellblock}<3->{
 \$\tikzref{prompt}
@@ -53,8 +58,8 @@ int main() \{\}
 
   \begin{itemize}
 
-  \item In C++ the translation into a binary format is the job of the compiler,
-    which produces an \alert{executable} file
+  \item In C++ the translation into a binary format is the job of the
+    \alert{compiler}, which produces an \alert{executable} file
 
 \begin{center}
     \begin{tikzpicture}[every text node part/.style={align=center}]
@@ -66,7 +71,7 @@ int main() \{\}
 
   \begin{shellblock}<2->{
 \$ g++ minimal.cpp
-\$ \uncover<3->{ls
+\$ \uncover<3->{ls\tikzref{ls}
 a.out  minimal.cpp
 \$ }\uncover<4->{./a.out\tikzref{program}
 \$ }\uncover<5->{g++ minimal.cpp -o minimal
@@ -75,6 +80,7 @@ a.out  minimal  minimal.cpp
 \$ }\uncover<6->{./minimal
 \$ }}\end{shellblock}
 
+  \uncover<3>{\tikz[remember picture,overlay] \draw[<-,white] ([xshift=1ex] ls) -- +(1,0) node[white,right] {\scriptsize the ls command lists the contents of a directory};}
   \uncover<4>{\tikz[remember picture,overlay] \draw[<-,white] ([xshift=1ex] program) -- +(1,0) node[white,right] {\scriptsize this command executes the program};}
 
   \item<7-> The \code{-o} option passed to the \code{g++} command allows to give
@@ -149,6 +155,10 @@ BraceWrapping:
   \end{column}
 \end{columns}
 
+\begin{itemize}[<7->]
+\item \href{https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#nl4-maintain-a-consistent-indentation-style}{NL.4}
+\end{itemize}
+
 \end{frame}
 
 \begin{frame}[fragile]{Syntax check}
@@ -194,9 +204,13 @@ int main()
 \}}\end{codeblock}
 
   \item<4-> Comments are ignored by the compiler and are equivalent to spaces
-  \item<4-> Comment are for humans
+  \item<4-> Comments are for humans
     \begin{itemize}
     \item Prefer expressive code
+    \item
+      \href{https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#nl1-dont-say-in-comments-what-can-be-clearly-stated-in-code}{NL.1},
+      \href{https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#nl2-state-intent-in-comments}{NL.2},
+      \href{https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#nl3-keep-comments-crisp}{NL.3}
     \end{itemize}
   \end{itemize}
 
