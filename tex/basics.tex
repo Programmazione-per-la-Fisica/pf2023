@@ -2,7 +2,7 @@
 
 %\includeonlyframes{current}
 
-\section{Basics}
+\section*{Basics}
 
 \begin{frame}{C++}
 
@@ -155,7 +155,7 @@ BraceWrapping:
   \end{column}
 \end{columns}
 
-\begin{itemize}[<7->]
+\begin{itemize}[<9->]
 \item \href{https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#nl4-maintain-a-consistent-indentation-style}{NL.4}
 \end{itemize}
 
@@ -367,6 +367,9 @@ Hello, Francesco
         \item $[-2$ $147$ $483$ $648, +2$ $147$ $483$ $647]$
         \end{itemize}
       \item<7-> Default type you should use to count and do integer arithmetic
+        \begin{itemize}
+        \item \href{https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#es102-use-signed-types-for-arithmetic}{ES.102}
+        \end{itemize}
       \end{itemize}
     \end{column}
     \hfill
@@ -394,7 +397,9 @@ Hello, Francesco
 
 \end{frame}
 
-\begin{frame}{Identifiers}
+% the fragile here is needed because of the use of a # character
+% https://tex.stackexchange.com/questions/420448/error-illegal-parameter-number-in-definition-of-iterate
+\begin{frame}[fragile]{Identifiers}
 
   \begin{itemize}
   \item An \textit{identifier} is a sequence of letters (including \code{_}) and
@@ -408,6 +413,7 @@ Hello, Francesco
     \item Choose meaningful names
     \item Get used to write in English
     \end{itemize}
+  \item \href{https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#nl8-use-a-consistent-naming-style}{NL.8}
   \end{itemize}
 
 \end{frame}
@@ -606,7 +612,7 @@ Hello, Francesco
 
   \begin{codeblock}<+->{
 std::string corso\{"Programmazione per la Fisica"\};
-\uncover<+->{corso = corso \tikzref{strplusref}+ "\bslash{n}Anno Accademico 2022/2023";}}\end{codeblock}
+\uncover<+->{corso = corso \tikzref{strplusref}+ "\bslash{n}Anno Accademico 2023/2024";}}\end{codeblock}
 
 \uncover<+->{
   \begin{tikzpicture}[remember picture,overlay]
@@ -640,7 +646,8 @@ std::string corso\{"Programmazione per la Fisica"\};
   \item They modify the state of the program, i.e. the state of memory, or the
     external world
   \end{itemize}
-
+\item<9-> Avoid complicated expressions
+  (\href{https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#es40-avoid-complicated-expressions}{ES.40})
 \end{itemize}
 
 \end{frame}
@@ -732,6 +739,7 @@ a, b
   \item Rules exist for associativity, commutativity and precedence
     \begin{itemize}[<.->]
     \item When in doubt use parentheses
+      (\href{https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#es41-if-in-doubt-about-operator-precedence-parenthesize}{ES.41})
     \end{itemize}
   \item Many operators can be \alert{overloaded} for user-defined types
     \begin{itemize}[<.->]

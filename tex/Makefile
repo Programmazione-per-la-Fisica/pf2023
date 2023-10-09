@@ -10,7 +10,7 @@ pf2023.pdf: $(TEXFILES)
 	echo '\input{introduzione.tex}' > contents.tex
 	echo '\input{architecture.tex}' >> contents.tex
 	echo '\input{basics.tex}' >> contents.tex
-#	echo '\input{flowcontrol.tex}' >> contents.tex
+	echo '\input{flowcontrol.tex}' >> contents.tex
 #	echo '\input{functions.tex}' >> contents.tex
 #	echo '\input{reference.tex}' >> contents.tex
 #	echo '\input{class.tex}' >> contents.tex
@@ -29,8 +29,8 @@ pf2023p.pdf: $(TEXFILES)
 	rm -f contents.tex
 	echo '\input{introduction.tex}' > contents.tex
 	echo '\input{architecture.tex}' >> contents.tex
-#	echo '\input{basics.tex}' >> contents.tex
-#	echo '\input{flowcontrol.tex}' >> contents.tex
+	echo '\input{basics.tex}' >> contents.tex
+	echo '\input{flowcontrol.tex}' >> contents.tex
 #	echo '\input{functions.tex}' >> contents.tex
 #	echo '\input{reference.tex}' >> contents.tex
 #	echo '\input{class.tex}' >> contents.tex
