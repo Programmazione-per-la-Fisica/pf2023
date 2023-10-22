@@ -638,15 +638,16 @@ std::string corso\{"Programmazione per la Fisica"\};
 \uncover<3->{\alert<8->{i = 1 + 2}       // assignment}
 \uncover<4->{i == j          // equality comparison}
 \uncover<5->{sqrt(x) > 1.42}
-\uncover<6->{\alert<8->{std::cout <{}< "hello, " <{}< name <{}< \upquote{\bslash{}n}}}}\end{codeblock}
+\uncover<6->{\alert<8->{std::cout <{}< "hello, " <{}< name <{}< \upquote{\bslash{}n}}}
+\uncover<7->{a > 0 ? a - 1 : a + 1}}\end{codeblock}
 
-\item<7-> The evaluation of an expression typically produces a result
-\item<8-> Some expressions have \textit{side-effects}
+\item<8-> The evaluation of an expression typically produces a result
+\item<9-> Some expressions have \textit{side-effects}
   \begin{itemize}
   \item They modify the state of the program, i.e. the state of memory, or the
     external world
   \end{itemize}
-\item<9-> Avoid complicated expressions
+\item<10-> Avoid complicated expressions
   (\href{https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#es40-avoid-complicated-expressions}{ES.40})
 \end{itemize}
 
