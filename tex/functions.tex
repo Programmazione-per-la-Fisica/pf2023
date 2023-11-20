@@ -828,7 +828,7 @@ int gcd(int a, int b)
 
 \end{frame}
 
-\begin{frame}{\code{break} and \code{continue} for loops}
+\begin{frame}[fragile]{\code{break} and \code{continue} for loops}
 
   \begin{itemize}
   \item<1-> Within a loop block, the \code{break} statement allows to terminate
@@ -836,7 +836,7 @@ int gcd(int a, int b)
   \item<2-> Within a loop block, the \code{continue} statement allows to jump to
     the end of the current iteration of the loop
   \item<3> The same effect can be obtained with appropriate use of conditionals,
-    but the resulting code may be more complicated
+    but the resulting code may be more complicated (\href{https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#es77-minimize-the-use-of-break-and-continue-in-loops}{ES.77})
   \end{itemize}
 \end{frame}
 
