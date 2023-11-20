@@ -12,7 +12,7 @@ pf2023.pdf: $(TEXFILES)
 	echo '\input{basics.tex}' >> contents.tex
 	echo '\input{flowcontrol.tex}' >> contents.tex
 	echo '\input{functions.tex}' >> contents.tex
-#	echo '\input{reference.tex}' >> contents.tex
+	echo '\input{reference.tex}' >> contents.tex
 #	echo '\input{class.tex}' >> contents.tex
 #	echo '\input{templates.tex}' >> contents.tex
 #	echo '\input{stl.tex}' >> contents.tex
@@ -32,7 +32,7 @@ pf2023p.pdf: $(TEXFILES)
 	echo '\input{basics.tex}' >> contents.tex
 	echo '\input{flowcontrol.tex}' >> contents.tex
 	echo '\input{functions.tex}' >> contents.tex
-#	echo '\input{reference.tex}' >> contents.tex
+	echo '\input{reference.tex}' >> contents.tex
 #	echo '\input{class.tex}' >> contents.tex
 #	echo '\input{templates.tex}' >> contents.tex
 #	echo '\input{stl.tex}' >> contents.tex
