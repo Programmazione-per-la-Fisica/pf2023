@@ -728,22 +728,27 @@ for (int i : \{1, 2, 3, 4, 5\}) \{
   the expression used to initialize the object
 
   \begin{codeblock}<2->{
-auto z;                       \uncover<3->{// error, no initializer
-auto i\{0\};                    }\uncover<4->{// int
-auto const f\{0.F\};            }\uncover<5->{// float const
-auto r\{i + f\};                }\uncover<6->{// float
-auto s\{std::string\{"hello"\}\}; }\uncover<7->{// std::string
-auto& rs\{s\};                  }\uncover<8->{// std::string&
-auto const& cri\{i\};           }\uncover<9->{// int const&
-auto j\{rs\};                   }\uncover<10->{// std::string
-auto& g\{f\};                   }\uncover<11->{// float const&
-auto p\{&i\};                   }\uncover<12->{// int*
-auto q\{p\};                    }\uncover<13->{// int*
-auto* t\{p\};                   }\uncover<14->{// int*}}\end{codeblock}
+auto z;                        \uncover<3->{// error, no initializer
+auto i = 0;                    }\uncover<4->{// int
+auto const f = 0.F;            }\uncover<5->{// float const
+auto r = i + f;                }\uncover<6->{// float
+auto s = std::string\{"hello"\}; }\uncover<7->{// std::string
+auto& rs = s;                  }\uncover<8->{// std::string&
+auto const& cri = i;           }\uncover<9->{// int const&
+auto j = rs;                   }\uncover<10->{// std::string
+auto& g = f;                   }\uncover<11->{// float const&
+auto p = &i;                   }\uncover<12->{// int*
+auto q = p;                    }\uncover<13->{// int*
+auto* t = p;                   }\uncover<14->{// int*}}\end{codeblock}
 
   \begin{itemize}
   \item<10-> \code{auto} never deduces a reference
   \item<11-> \code{auto} preserves constness of references
+  \item<15-> Personal preference to use \code{=} instead of \code{\{\}} when
+    initializing an \code{auto} variable
+    \begin{itemize}
+    \item Both \code{auto i\{0\}} and \code{auto i = 0;} are fine
+    \end{itemize}
   \end{itemize}
 \end{frame}
 
@@ -821,8 +826,8 @@ Operator op\{55\};  // ok\end{codeblock}
   \item Conversions to the underlying type need to be explicit
 
     \begin{codeblock}<.->
-int i\{Operator::Plus\};                     // error
-auto i\{static_cast<int>(Operator::Plus)\};  // ok\end{codeblock}
+int i\{Operator::Plus\};                    // error
+int i\{static_cast<int>(Operator::Plus)\};  // ok\end{codeblock}
 
   \end{itemize}
 
