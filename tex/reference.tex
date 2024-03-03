@@ -794,7 +794,7 @@ enum class Operator \{ Plus, Minus, Multiplies, Divides \};\end{codeblock}
     followed by the scope-resolution operator (\code{::})
 
     \begin{codeblock}
-auto op\{Operator::Plus\}; // op is of type Operator\end{codeblock}
+auto op = Operator::Plus; // op is of type Operator\end{codeblock}
 
   \item By default, an enumerator has the value of the previous enumerator
     incremented by one and the first enumerator has value $0$
