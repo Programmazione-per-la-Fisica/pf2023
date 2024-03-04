@@ -14,9 +14,9 @@ pf2023.pdf: $(TEXFILES)
 	echo '\input{functions.tex}' >> contents.tex
 	echo '\input{reference.tex}' >> contents.tex
 	echo '\input{class.tex}' >> contents.tex
-#	echo '\input{templates.tex}' >> contents.tex
-#	echo '\input{stl.tex}' >> contents.tex
-#	echo '\input{compilation.tex}' >> contents.tex
+	echo '\input{templates.tex}' >> contents.tex
+	echo '\input{stl.tex}' >> contents.tex
+	echo '\input{compilation.tex}' >> contents.tex
 #	echo '\input{memory_management.tex}' >> contents.tex
 #	echo '\input{static.tex}' >> contents.tex
 #	echo '\input{polymorphism.tex}' >> contents.tex
@@ -34,9 +34,9 @@ pf2023p.pdf: $(TEXFILES)
 	echo '\input{functions.tex}' >> contents.tex
 	echo '\input{reference.tex}' >> contents.tex
 	echo '\input{class.tex}' >> contents.tex
-#	echo '\input{templates.tex}' >> contents.tex
-#	echo '\input{stl.tex}' >> contents.tex
-#	echo '\input{compilation.tex}' >> contents.tex
+	echo '\input{templates.tex}' >> contents.tex
+	echo '\input{stl.tex}' >> contents.tex
+	echo '\input{compilation.tex}' >> contents.tex
 #	echo '\input{memory_management.tex}' >> contents.tex
 #	echo '\input{static.tex}' >> contents.tex
 #	echo '\input{polymorphism.tex}' >> contents.tex
