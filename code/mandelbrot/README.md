@@ -38,4 +38,16 @@ sincerandosi prima di aver installato SFML:
 sudo apt install libsfml-dev
 ```
 
-(analogamente per `brew` su MacOS)
+Per MacOS, prima installare `sfml` con `brew`
+
+```sh
+brew install sfml
+```
+
+Il comando di compilazione diventa
+
+```sh
+g++ -Wall -Wextra main_sfml.cpp -o mandelbrot_sfml -I /opt/homebrew/Cellar/sfml/2.6.1/include -L /opt/homebrew/Cellar/sfml/2.6.1/lib -lsfml-window -lsfml-graphics -lsfml-system
+```
+
+`-I /opt/homebrew/Cellar/sfml/2.6.1/include` indica al compilatore di cercare gli include file anche in quella directory. `-L /opt/homebrew/Cellar/sfml/2.6.1/lib` indica al compilatore di cercare le librerie necessarie anche in quella directory.
