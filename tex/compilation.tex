@@ -1,8 +1,8 @@
-% !TeX root = ./pf2022.tex
+% !TeX root = ./pf2023.tex
 
 %\includeonlyframes{current}
 
-\section{Compilation model}
+\section*{Compilation model}
 
 \begin{frame}[fragile]{The C++ compilation model}
 
@@ -280,26 +280,48 @@ class Sample \{ // class definition
     \item Because they are \code{\#include}d in other header and source files
       where those declarations and definitions are needed
     \end{itemize}
-  \item For a given software component, a typical situation foresees
+  \item For a given software component, a \textul{typical} situation foresees
     \begin{itemize}
     \item One \textbf{header} file containing free function declarations, class
       definitions with member function declarations, template definitions
+      \begin{itemize}
+      \item The contents of the header file represent the
+        \textbf{interface} of the component
+      \end{itemize}
     \item One \textbf{source} file containing definitions of free and member functions
       and of any other entity needed for the implementation
       \begin{itemize}
-      \item \textbf{Suggestion} the source file \code{\#include}s the header
-        file as the first \code{\#include}
+      \item \textbf{Suggestion} the source file \code{\#include}s the
+        corresponding header file as the first \code{\#include}
       \end{itemize}
     \item One file with the unit \textbf{tests}
+    \item But there is much flexibility in how to distribute
+      definitions between header and source files, especially for
+      functions
     \end{itemize}
-  \item A function defined in a header file needs to be
-    \code{inline}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Header and source files \insertcontinuationtext}
+
+  \begin{itemize}[<+->]
+  \item A function defined in a header file needs to be declared
+    \textbf{\code{inline}}
+    \begin{codeblock}
+\alert{inline} double norm2(Complex const& c)
+\{
+  return c.real() * c.real() + c.imag() * c.imag();
+\}\end{codeblock}
+
+  \item \code{inline} informs the compiler/linker that all the
+    definitions of the function, even if they are in multiple
+    translation units, are equal
     \begin{itemize}
-    \item NB the \code{inline} keyword is not (any more) an optimization hint to
-      the compiler
+    \item NB the \code{inline} keyword is not (any more) an
+      optimization hint to the compiler
     \end{itemize}
-  \item Member functions (methods) defined inside the class and function
-    templates are implicitly \code{inline}
+  \item Function templates and member functions (methods) defined
+    inside the class are implicitly \code{inline}
   \end{itemize}
 
 \end{frame}
@@ -338,7 +360,8 @@ void Sample::add(double x) \{
   \item The method can be defined in the same file (normally a header file) or
     even in another file (normally the corresponding source file)
 
-  \item If the definition is in a header file, the method should be declared \code{inline}
+  \item As for free functions, if the definition is in a header file,
+    the method should be declared \code{inline}
 
     \begin{codeblock}
 \alert{inline} void Sample::add(double d) \{
@@ -346,9 +369,6 @@ void Sample::add(double x) \{
   sum_x_ += x;
   \ddd
 \}\end{codeblock}
-
-    This informs the compiler/linker that all the definitions of the function, even
-    if they are in multiple translation units, are equal
 
   \end{itemize}
 
@@ -455,7 +475,7 @@ target_link_libraries(mandelbrot_sfml PRIVATE sfml-graphics)
 }\end{codeblock}
 
   \item See
-    \href{https://github.com/Programmazione-per-la-Fisica/pf2022/tree/main/code/mandelbrot_sfml}{code/mandelbrot_sfml}
+    \href{https://github.com/Programmazione-per-la-Fisica/pf2023/tree/main/code/mandelbrot\_cmake}{code/mandelbrot\_cmake}
     for a basic example
   \end{itemize}
 \end{frame}
