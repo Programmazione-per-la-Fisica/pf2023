@@ -1179,13 +1179,13 @@ class SomeUniqueName \{
   \begin{itemize}
   \item Automatic variables used in the body of the lambda need to be captured
     \begin{itemize}
-    \item<2-> \texttt{[]} capture nothing
-    \item<2-> \texttt{[=]} capture all (what is needed) by value
-    \item<2-> \texttt{[k]} capture \texttt{k} by value
-    \item<3-> \texttt{[\&]} capture all (what is needed) by reference
-    \item<3-> \texttt{[\&k]} capture \texttt{k} by reference
-    \item<4-> \texttt{[=, \&k]} capture all by value but \texttt{k} by reference
-    \item<4-> \texttt{[\&, k]} capture all by reference but \texttt{k} by value
+    \item<2-> \code{[]} capture nothing
+    \item<2-> \code{[=]} capture all (what is needed) by value
+    \item<2-> \code{[k]} capture \code{k} by value
+    \item<3-> \code{[\&]} capture all (what is needed) by reference
+    \item<3-> \code{[\&k]} capture \code{k} by reference
+    \item<4-> \code{[=, \&k]} capture all by value but \code{k} by reference
+    \item<4-> \code{[\&, k]} capture all by reference but \code{k} by value
     \end{itemize}
 
     \vskip -3mm
@@ -1293,15 +1293,15 @@ class SomeUniqueName \{
 
   \begin{itemize}
   \item<4-> Variables captured by reference can be modified
-    \begin{itemize}
-    \item There is no way to capture by \texttt{const\&}
-    \end{itemize}
-  \end{itemize}
 
   \begin{codeblock}<4->
 int v = 3;
 [\&v] \{ ++v; \} (); // NB the lamdba is immediately invoked
 assert(v == 4);\end{codeblock}
+
+  \item<5-> There is no immediate way to capture by \code{const\&},
+    but one can use \code{std::as_const}
+  \end{itemize}
 
 \end{frame}
 
