@@ -17,8 +17,8 @@ pf2023.pdf: $(TEXFILES)
 	echo '\input{templates.tex}' >> contents.tex
 	echo '\input{stl.tex}' >> contents.tex
 	echo '\input{compilation.tex}' >> contents.tex
-#	echo '\input{memory_management.tex}' >> contents.tex
-#	echo '\input{static.tex}' >> contents.tex
+	echo '\input{static.tex}' >> contents.tex
+	echo '\input{memory_management.tex}' >> contents.tex
 #	echo '\input{polymorphism.tex}' >> contents.tex
 #	echo '\input{epilog.tex}' >> contents.tex
 	$(LATEX) pf2023
@@ -37,8 +37,8 @@ pf2023p.pdf: $(TEXFILES)
 	echo '\input{templates.tex}' >> contents.tex
 	echo '\input{stl.tex}' >> contents.tex
 	echo '\input{compilation.tex}' >> contents.tex
-#	echo '\input{memory_management.tex}' >> contents.tex
-#	echo '\input{static.tex}' >> contents.tex
+	echo '\input{static.tex}' >> contents.tex
+	echo '\input{memory_management.tex}' >> contents.tex
 #	echo '\input{polymorphism.tex}' >> contents.tex
 #	echo '\input{epilog.tex}' >> contents.tex
 	$(LATEX) -jobname=pf2023p $(TRANS)
