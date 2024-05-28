@@ -27,7 +27,7 @@ pf2023.pdf: $(TEXFILES)
 
 pf2023p.pdf: $(TEXFILES)
 	rm -f contents.tex
-	echo '\input{introduction.tex}' > contents.tex
+	echo '\input{introduzione.tex}' > contents.tex
 	echo '\input{architecture.tex}' >> contents.tex
 	echo '\input{basics.tex}' >> contents.tex
 	echo '\input{flowcontrol.tex}' >> contents.tex
